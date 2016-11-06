@@ -1,0 +1,16 @@
+#ifndef __ERROR_H__
+#define __ERROR_H__
+
+typedef int error_t;
+
+const char *printerr(int errnumber);
+
+enum error_type
+{
+  E_NONE,
+  E_RESOURCES,
+  E_ARGUMENTS,
+
+};
+
+#endif

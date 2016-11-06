@@ -1,0 +1,76 @@
+#include <stdio.h>
+#include <errno.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include "in_memory.h"
+
+error_t
+linear_search_in_mem (int *key_list, int key_size, int* seek_list,
+               int seek_size, int **hit)
+{
+  error_t result = E_NONE;
+  int iter_seek = 0;
+  int iter_key = 0;
+
+  // Allocate memory for the hit array
+  if ((*hit = (int *)malloc(sizeof(int) * seek_size)) == NULL) {
+      printf("ERROR: In %s: \n\tHit Array Init : %s\n", __FUNCTION__, strerror(errno));
+      return (errno);
+  }
+
+  memset(*hit, 0, sizeof(int) * seek_size);
+
+  for (; iter_seek < seek_size; iter_seek++) {
+    for (iter_key = 0; iter_key < key_size; iter_key++) {
+      if (key_list[iter_key] == seek_list[iter_seek]) {
+        (*hit)[iter_seek] = 1;
+      }
+    }
+  }
+
+  return (result);
+}
+
+error_t
+binary_search_in_mem(int *key_list, int key_size, int* seek_list,
+                     int seek_size, int **hit)
+{
+  error_t result = E_NONE;
+  int iter_seek;
+  bool found;
+
+  // Allocate memory for the hit array
+  if ((*hit = (int *)malloc(sizeof(int) * seek_size)) == NULL) {
+      printf("ERROR: In %s: \n\tHit Array Init: %s\n", __FUNCTION__, strerror(errno));
+      return (errno);
+  }
+
+  memset(*hit, 0, sizeof(int) * seek_size);
+
+  for (iter_seek = 0; iter_seek < seek_size; iter_seek++) {
+    int left = 0;
+    int right = key_size - 1;
+    int middle = 0;
+    found = false;
+
+    while (left <= right) {
+      middle = (right + left) / 2;
+      if (seek_list[iter_seek] == key_list[middle]) {
+        (*hit)[iter_seek] = 1;
+        found = true;
+        break;
+      } else if (seek_list[iter_seek] > key_list[middle]) {
+        left = middle + 1;
+      } else {
+        right = middle - 1;
+      }
+    }
+
+    if (!found) {
+      (*hit)[iter_seek] = 0;
+    }
+  }
+
+  return (result);
+}
