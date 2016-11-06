@@ -65,7 +65,7 @@ main(int argc, char **argv)
            strerror(result));
     return(0);
   }
-  fclose(inp);
+  fclose(inp); // Close seek.db
 
   // Open key.db (or other relevant file) for reading.
   if (!(inp = fopen(argv[2], "rb"))) {
@@ -116,9 +116,9 @@ main(int argc, char **argv)
       printf("ERROR: In %s: \n\t%s\n", __FUNCTION__, strerror(result));
       return(0);
     }
-
   }
 
+  // Close the key.db (or the corresponding file)
   fclose(inp);
 
   // End the time measurements. Calculate the time elapsed.
