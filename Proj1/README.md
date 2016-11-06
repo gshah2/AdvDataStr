@@ -1,4 +1,4 @@
-##Assignment 1 - In-Memory vs. Disk-Based Searching
+##In-Memory vs. Disk-Based Searching
 
 ###Introduction
 
