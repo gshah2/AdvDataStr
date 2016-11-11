@@ -11,8 +11,11 @@ Instructions to compile the library:
 This repository comprises of four projects:
 
 Project 1: In-Memory vs. Disk-Based Searching
+
 Project 2: In-Memory Indexing with Availability Lists
+
 Project 3: Disk-Based Mergesort
+
 Project 4: B-Trees
 
 The instructions to compile the projects:
