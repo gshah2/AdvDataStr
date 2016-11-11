@@ -20,7 +20,7 @@ Project 4: B-Trees
 
 The instructions to compile the projects:
 
-make PROGRAM:project_dir_name : Will compile the selected project and the required infra code. The executable of the program will be created inside that particular project directory.
+make PROGRAM:"project_dir_name" : Will compile the selected project and the required infra code. The executable of the program  will be created inside that particular project directory.
 
-make clean 	: Cleans the workspace and gets rid of the existing executables.
+make clean : Cleans the workspace and gets rid of the existing executables.
 
