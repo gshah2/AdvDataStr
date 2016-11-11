@@ -3,7 +3,7 @@ CFLAGS=-c -Wall
 LDFLAGS=
 SOURCES=$(shell find . -name '*.c')
 OBJECTS=$(SOURCES:.c=.o)
-EXECUTABLE=assn_1
+EXECUTABLE=infra
 
 all: $(SOURCES) $(EXECUTABLE)
 

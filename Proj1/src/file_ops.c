@@ -2,7 +2,6 @@
 #include <string.h>
 #include <errno.h>
 #include <stdlib.h>
-#include "../infra/error.h"
 #include "file_ops.h"
 
 error_t

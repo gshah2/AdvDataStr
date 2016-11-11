@@ -1,7 +1,7 @@
 #ifndef __FILE_OPS_H__
 #define __FILE_OPS_H__
 
-#include "../infra/error.h"
+#include "../../infra/error.h"
 
 error_t get_size_of_file(FILE **fp, int *size);
 

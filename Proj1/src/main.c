@@ -4,7 +4,7 @@
 #include <sys/time.h>
 #include <errno.h>
 #include <math.h>
-#include "../infra/error.h"
+#include "../../infra/error.h"
 #include "search.h"
 #include "file_ops.h"
 
@@ -14,7 +14,7 @@
 #define IN_MEM_BIN_SEARCH "--mem-bin"
 #define DISK_LIN_SEARCH "--disk-lin"
 #define DISK_BIN_SEARCH "--disk-bin"
-#define OUTPUT_FILE "output.txt"
+#define OUTPUT_FILE "./Proj1/output.txt"
 #define SEC_TO_USEC 1000000L
 
 int
